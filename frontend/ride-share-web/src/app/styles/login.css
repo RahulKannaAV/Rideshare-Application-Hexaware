@@ -1,0 +1,55 @@
+body {
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+.login-heading {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.login-purpose {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.login-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 50px;
+    margin-top: 25px;
+}
+
+.login-submit {
+    margin-top: 20px;
+}
+
+.login-register-btn {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.paper-margins {
+    margin: 100px 10%;
+}
+
+.register-paper-margins {
+    margin: 20px 10%;
+}
+
+.register-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 20px;
+    margin-top: 25px;
+}
+
+.role-div {
+    display: flex;
+    justify-content: center;
+}

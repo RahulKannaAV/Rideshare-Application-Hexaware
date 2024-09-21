@@ -1,0 +1,26 @@
+{
+  "name": "ride-share-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.13.1",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^6.1.1",
+    "@mui/material-nextjs": "^6.1.1",
+    "next": "^14.2.13",
+    "react": "^18",
+    "react-dom": "^18",
+    "ride-share-web": "file:"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.7"
+  }
+}
