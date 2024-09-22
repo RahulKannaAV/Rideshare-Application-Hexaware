@@ -2,19 +2,17 @@
 
 import '../styles/login.css';
 import { TextField, Button } from '@mui/material';
-import { useRouter } from 'next/navigation';
-import RoleSelector from './RoleSelection';
 import { useState } from 'react';
 import { LocalizationProvider, TimePicker } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { DatePicker } from '@mui/x-date-pickers';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
-
-const SearchRide = function() {
+const CreateRide = function() {
     const [date, setDate] = useState('');
     const [time, setTime] = useState("");
-    const [allRides, setRides] = useState([]);
+    const router = useRouter();
 
     console.log(date, time);
 
@@ -28,8 +26,10 @@ const SearchRide = function() {
         setTime(timeString);
     }
 
-    function findRides() {
-        console.log("Finding rides now")
+    function createRide() {
+        console.log("Creating rides now");
+        router.push("/rider/ride_detail/1");
+
     }
    
     return (
@@ -44,7 +44,7 @@ const SearchRide = function() {
         {/* Main Heading */}
         <h1 className="login-heading">Rideshare Application</h1>
         {/* Purpose Heading */}
-        <h3 className='login-purpose'>Search Rides</h3>
+        <h3 className='login-purpose'>Create Ride</h3>
 
         {/* Registration Input Part */}
         <div>
@@ -85,19 +85,18 @@ const SearchRide = function() {
             />
 
 
+
+
+
             {/* Login Button and Register Button*/}
             <div className='register-buttons'>
                 <div className='login-submit'>
-                    <Button variant="contained" onClick={findRides}> Find Rides </Button>
+                    <Button variant="contained" onClick={createRide}> Create </Button>
                 </div>
             </div>
-
-            {allRides.length > 0 && (
-                <AvailableRides rideList={allRides} />
-            )}
 
         </div>
     </div>)
 }
 
-export default SearchRide;
+export default CreateRide;
