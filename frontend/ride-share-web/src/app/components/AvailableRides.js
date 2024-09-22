@@ -9,32 +9,6 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import SearchBox from './SearchBox';
 
-const columns = [
-    {id: "source", label: "Start"},
-  { id: 'name', label: 'Destination', minWidth: 170 },
-  { id: 'date', label: 'Date\u00a0of\u00a0Trip', minWidth: 100 },
-  {
-    id: 'time',
-    label: 'Time\u00a0',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'driver',
-    label: 'Driver',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'distance',
-    label: 'Distance',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toFixed(2),
-  },
-];
 
 function createData(source, name, date, time, driver, distance) {
   return { source, name, date, time, driver, distance };
@@ -44,7 +18,21 @@ const rows = [
     createData("D", "F", '26-09-2024', '19:00', 'Moorthy', 7.3),
 ];
 
-const RiderUpcomingRidesTable = function() {
+const RiderUpcomingRidesTable = function({rideList}) {
+  const [columns, setColumns] = useState(rideList[0]);
+  const [rows, setRows] = useState([]);
+
+  for(let rowno=1; rowno<rideList.length; rowno++) {
+    let row = {};
+    for(let elt=0; elt<rideList[rowno].length; elt++) [
+        row[columns[elt]] = rideList[rowno][elt]
+    ]
+    setRows([...rows, row]);
+  }
+
+
+
+
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -56,7 +44,7 @@ const RiderUpcomingRidesTable = function() {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
-  console.log(rows);
+
   return (
     <Paper sx={{ width: '100%', overflow: 'hidden', display: "flex", flexDirection: "column" }}>
       <div className='search-box' style={{width: "400px",  marginLeft: "72%"}}>
@@ -112,4 +100,4 @@ const RiderUpcomingRidesTable = function() {
   );
 }
 
-export default RiderUpcomingRidesTable;
+export default AvailableRides;

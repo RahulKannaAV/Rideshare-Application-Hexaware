@@ -14,6 +14,7 @@ import Image from 'next/image';
 const SearchRide = function() {
     const [date, setDate] = useState('');
     const [time, setTime] = useState("");
+    const [allRides, setRides] = useState([]);
 
     console.log(date, time);
 
@@ -111,6 +112,10 @@ const SearchRide = function() {
                     <Button variant="contained" onClick={findRides}> Find Rides </Button>
                 </div>
             </div>
+
+            {allRides.length > 0 && (
+                <AvailableRides rideList={allRides} />
+            )}
 
         </div>
     </div>)
