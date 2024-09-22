@@ -5,6 +5,8 @@ import { TextField, Button } from '@mui/material';
 import { useRouter } from 'next/navigation';
 import RoleSelector from './RoleSelection';
 import { useState } from 'react';
+import Image from 'next/image';
+
 
 const RegisterComponent = function() {
     const [role, setRole] = useState("");
@@ -12,6 +14,13 @@ const RegisterComponent = function() {
 
     return (
     <div>
+        {/* Logo */}
+        <Image className='form-logos'
+                src="/./hexaware_logo.jpg"
+                width={200}
+                height={100}
+                alt="Rideshare app logo"/>
+
         {/* Main Heading */}
         <h1 className="login-heading">Rideshare Application</h1>
         {/* Purpose Heading */}

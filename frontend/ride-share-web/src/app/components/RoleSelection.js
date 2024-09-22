@@ -15,7 +15,7 @@ const RoleSelector = function({avRoles, roleSelector}) {
             onChange={(e) => roleSelector(e.target.value)}
             >
                 {avRoles.map((role, idx) => (
-                    <MenuItem value={role}>{role}</MenuItem>
+                    <MenuItem key={idx} value={role}>{role}</MenuItem>
                 ))}
             </Select>
         </FormControl>

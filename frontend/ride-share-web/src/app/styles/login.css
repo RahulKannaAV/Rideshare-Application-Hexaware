@@ -6,7 +6,7 @@ body {
 
 
 .login-heading {
-    padding-top: 50px;
+    padding-top: 20px;
     text-align: center;
 }
 
@@ -52,4 +52,9 @@ body {
 .role-div {
     display: flex;
     justify-content: center;
+}
+
+.form-logos {
+    margin: 15px 42%;
+    margin-bottom: 5px;
 }
