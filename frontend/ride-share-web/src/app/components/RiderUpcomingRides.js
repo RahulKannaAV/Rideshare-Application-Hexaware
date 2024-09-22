@@ -41,10 +41,10 @@ function createData(source, name, date, time, driver, distance) {
 }
 
 const rows = [
-    createData("A", "C", '26-08-2024', '19:00', 'Velu', 7.3),
+    createData("D", "F", '26-09-2024', '19:00', 'Moorthy', 7.3),
 ];
 
-const RiderRidesTable = function() {
+const RiderUpcomingRidesTable = function() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -112,4 +112,4 @@ const RiderRidesTable = function() {
   );
 }
 
-export default RiderRidesTable;
+export default RiderUpcomingRidesTable;

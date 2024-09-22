@@ -4,6 +4,10 @@ body {
     width: 100vw;
 }
 
+.datetime-pick {
+    margin: 15px 40%;
+}
+
 
 .login-heading {
     padding-top: 20px;
